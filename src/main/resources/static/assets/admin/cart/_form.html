@@ -1,0 +1,24 @@
+<div class="card">
+    <div class="card-header">
+        <h3 class="mt-2">Chỉnh Sửa Đơn Hàng</h3>
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-sm-8">
+                <div class="row">
+                    <div class="form-group col-sm-6"><label>id</label> <input ng-model="form.id" class="form-control" disabled="disabled" /></div>
+                    <div class="form-group col-sm-6"><label>Tên</label> <input ng-model="form.account.username" class="form-control" disabled="disabled" /></div>
+                </div>
+
+                <div class="row">
+                    <div class="form-group col-sm-6"><label>Địa chỉ</label> <input ng-model="form.address" class="form-control" /></div>
+                    <div class="form-group col-sm-6"><label>Sđt</label> <input ng-model="form.phone" class="form-control" /></div>
+                    <div class="form-group col-sm-6"><label class="form-check-label" for="inlineFormCheck"> Trạng thái </label> <input ng-model="form.status" class="form-control" name="status" ng-value="false" type="text" id="inlineFormCheck2" /></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card-footer text-center">
+        <button ng-click="update()" class="btn btn-outline-success"><b class="fa-solid fa-square-pen"></b> Cập nhật</button>
+    </div>
+</div>

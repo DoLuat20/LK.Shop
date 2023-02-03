@@ -1,0 +1,60 @@
+<div class="card">
+	<div class="card-header">
+		<h3 class="mt-2">DANH SÁCH SẢN PHẨM</h3>
+	</div>
+	<div class="card-body">
+		<table class="table table-bordered">
+			<thead>
+				<tr>
+					<th>Id</th>
+					<th>Name</th>
+					<th>Price</th>
+					<th>Date</th>
+					<th>Image</th>
+					<th>Category</th>
+					<th>Available</th>
+					<th>description</th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="item in pager.items">
+					<td>{{item.id}}</td>
+					<td>{{item.name}}</td>
+					<td class="text-end">{{item.price|number:2}}</td>
+					<td>{{item.createDate|date:'dd-MM-yyyy'}}</td>
+					<td><img height="50px" width="50px" ng-src="/assets/images/{{item.image}}" alt=""></td>
+					<td>{{item.category.name}}</td>
+					<td>{{item.available?'Yes':'No'}}</td>
+					<td>{{item.description}}</td>
+					<td class="text-center">
+						<button ng-click="edit(item)" class="btn btn-outline-success rounded-circle btn-cus">
+							<i class="fas fa-pen"></i>
+						</button>
+						<button ng-click="delete(item)" class="btn btn-outline-danger rounded-circle btn-cus">
+							<i class="fa-solid fa-trash-can"></i>
+						</button>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<div class="card-footer text-center">
+		<!-- <button ng-click="pager.first()" class="btn btn-sm"
+			style="width: 42px;">
+			<i class="fa-solid fa-backward-step"></i>
+		</button> -->
+		<button ng-click="pager.previous()" class="btn btn-sm">
+			<i class="fas fa-chevron-left"></i>
+		</button>
+		<button class="btn btn-sm">{{pager.page+1}} of
+			{{pager.count}}</button>
+		<button ng-click="pager.next()" class="btn btn-sm">
+			<i class="fas fa-chevron-right"></i>
+		<!-- </button>
+		<button ng-click="pager.last()" class="btn btn-sm"
+			style="width: 42px;">
+			<i class="fa-solid fa-forward-step"></i>
+		</button> -->
+	</div>
+</div>
